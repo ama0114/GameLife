@@ -71,9 +71,10 @@ public class GameLife{
 				 board[i[0]][i[1]]=1;
 			 }
 			 
-			 //Chane the 0 to the number of random cells you want to generate
-			 generateRandom(board,0);
+			 //Change the 0 to the number of random cells you want to generate
+			 generateRandom(board,3);
 			 
+			 //Change to slow down or slow up
 			 Thread.sleep(100);
 		}
 	}
@@ -120,8 +121,8 @@ public class GameLife{
 	public static void generateRandom(int[][] board, int n){
 		if(Math.floor(Math.random()*(200-0+1)+0)%10==0) {
 			 for(int i=0;i<n;i++) {
-					int x = (int) Math.floor(Math.random()*(49-0+1)+0);
-					int y = (int) Math.floor(Math.random()*(199-0+1)+0);
+					int x = (int) Math.floor(Math.random()*((tamX-1)-0+1)+0);
+					int y = (int) Math.floor(Math.random()*((tamY-1)-0+1)+0);
 					board[x][y] = 1;
 					
 					if(x-1 >= 0 && y-1>=0 && x+1<tamX && y+1<tamY) {
