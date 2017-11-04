@@ -37,23 +37,23 @@ public class GameLife{
 					if(board[i][j]==1)
 						vivas++;
 					if(i-1 >= 0 && j-1 >= 0 && i+1 < tamX && j+1<tamY) {
-						if(board[i][j]==1 && numVivas(board,i,j)==2) {
+						if(board[i][j]==1 && numAlive(board,i,j)==2) {
 							int[] v = {i,j};
 							toLive.add(v);
 						}		
-						if(board[i][j]==1 && numVivas(board,i,j)==3){
+						if(board[i][j]==1 && numAlive(board,i,j)==3){
 							int[] v = {i,j};
 							toLive.add(v);
 						}
-						if(board[i][j]==1 && numVivas(board,i,j)>3){
+						if(board[i][j]==1 && numAlive(board,i,j)>3){
 							int[] v = {i,j};
 							toKill.add(v);
 						}
-						if(board[i][j]==1 && numVivas(board,i,j)<3){
+						if(board[i][j]==1 && numAlive(board,i,j)<3){
 							int[] v = {i,j};
 							toKill.add(v);
 						}
-						if(board[i][j]==0 && numVivas(board,i,j)==3){
+						if(board[i][j]==0 && numAlive(board,i,j)==3){
 							int[] v = {i,j};
 							toLive.add(v);
 						}
@@ -95,7 +95,7 @@ public class GameLife{
 	}
 	
 	//Calculate the number of live cells around one
-	public static int numVivas(int[][] board, int x, int y) {
+	public static int numAlive(int[][] board, int x, int y) {
 		int ret = 0;
 		if(board[x-1][y-1]==1)
 			ret++;
